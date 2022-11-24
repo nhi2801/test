@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./css/test.css">
+    <link rel="stylesheet" href="./css/side-bar.css">
+    <link rel="stylesheet" href="./css/quiz-info-card.css">
+    <link rel="stylesheet" href="./css/questions-container.css">
+    <link rel="stylesheet" href="./css/aside.css">
+    <link rel="stylesheet" href="./css/result.css">
+    <link rel="stylesheet" href="./css/quizPageFooter.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="./css/responsive/header.css">
+    <link rel="stylesheet" href="./css/loading.css">
+
+    <title>Làm bài thi - Quiz</title>
+</head>
+
+<body>
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+    <header class="main-header">
+        <div class="top-header">
+            <div class="top-header-box">
+
+
+                <div class="logo"><a href="./main.html">Quiz</a></div>
+                <form id="search">
+                    <input type="search" class="search-data" name="search" id="search-bar" placeholder="Tìm kiếm..."
+                        required>
+                    <button type="submit" class="fas fa-search"></button>
+                </form>
+                <div class="tray">
+                    <a class="join-game-btn">Nhập Code</a>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="main" class="main">
+        <article class="mt-5 article">
+            <div class="content-container">
+                <div class="quiz-header">
+                    <div class="main-row">
+                        <div class="quiz-image">
+                            <div class="quiz-image-inner">
+                                <img src="" aria-hidden="true">
+                            </div>
+                        </div>
+                        <div class="quiz-details">
+                            <div class="content-type-header">QUIZ</div>
+                            <div class="quiz-name">
+                                <div class="quiz-name-text">Math - Shapes and Lines</div>
+                            </div>
+                            <div class="meta-data">
+                                <div class="row-1">
+                                    <div class="quiz-data-point">
+                                        <i class="fas fa-bullseye"></i>
+                                        <span class="accuracy-score">66%</span>
+                                        độ chính xác
+                                    </div>
+                                    <div class="dot-separator"></div>
+                                    <div class="quiz-data-point">
+                                        <i class="fas fa-play"></i>
+                                        <span> 690 lượt làm bài </span>
+                                    </div>
+                                </div>
+                                <div class="row-2">
+                                    <div class="quiz-data-point">
+                                        <i class="fas fa-graduation-cap"></i>
+                                        <span> Đại học </span>
+                                    </div>
+                                    <div class="dot-separator"></div>
+                                    <div class="quiz-data-point">
+                                        <i class="fas fa-book"></i>
+                                        <span> HTML </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="actions-row">
+                        <div class="created-by">
+                            <div class="user-img">
+                                <i aria-hidden="true" class="fas fa-user"></i>
+                            </div>
+                            <div class="user-data">
+                                <div class="time"> 2 tháng trước </div>
+                                <div class="username-text">Bùi Thị Dung Nhi</div>
+                            </div>
+                        </div>
+                        <div class="action-btns">
+                            <button id="heart-btn" class="like-btn no-select material-btn-interaction"
+                                aria-label="Like">
+                                <i class="far fa-heart"></i>
+                                <span id="count-likes">125</span>
+                            </button>
+                            <button id="share-btn" class="like-btn no-select material-btn-interaction"
+                                aria-label="Like"><i class="fas fa-share"></i>Share
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="questions-container">
+                    <div class="questions-header">
+                        <div class="num-questions">
+                            <div class="count-set-questions">
+                                <i class="far fa-question-circle"></i>
+                                <span id="question-count"> 17 </span> câu hỏi
+                            </div>
+
+                            <div class="timer">
+                                <span id="minutes"></span>:<span id="seconds"></span>
+                            </div>
+
+
+                            <button class="show-answers-btn">
+                                <i class="far fa-eye"></i>
+                                <span>Hiển thị đáp án</span>
+                            </button>
+                        </div>
+                        <div id="question-container" class="questions">
+                            <div id="question-list" class="question-list">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result d-flex align-items-center flex-column">
+                    <h4 class="result-title">Làm hết các câu rồi bấm "Nộp bài"</h4>
+                    <div class="btn-container d-flex justify-content-around">
+                        <a id="submit-score" href="" class="button glow-button">Nộp bài</a>
+                        <a id="report-btn" href="" class="button glow-button">Báo lỗi</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quiz-recommendations-container">
+                <div class="section-title">Có thể bạn quan tâm</div>
+                <div class="recomm-quizzes-list">
+                    <a href="" class="quiz-item">
+                        <div class="quiz-image-wrapper"></div>
+                        <div class="quiz-info-wrapper">
+                            <div class="quiz-title">A Day on Mars</div>
+                            <div class="quiz-num-questions">20 câu hỏi</div>
+                        </div>
+                    </a>
+                    <a href="" class="quiz-item">
+                        <div class="quiz-image-wrapper"></div>
+                        <div class="quiz-info-wrapper">
+                            <div class="quiz-title">A Day on Mars</div>
+                            <div class="quiz-num-questions">20 câu hỏi</div>
+                        </div>
+                    </a>
+                    <a href="" class="quiz-item">
+                        <div class="quiz-image-wrapper"></div>
+                        <div class="quiz-info-wrapper">
+                            <div class="quiz-title">A Day on Mars</div>
+                            <div class="quiz-num-questions">20 câu hỏi</div>
+                        </div>
+                    </a>
+                    <a href="" class="quiz-item">
+                        <div class="quiz-image-wrapper"></div>
+                        <div class="quiz-info-wrapper">
+                            <div class="quiz-title">A Day on Mars</div>
+                            <div class="quiz-num-questions">20 câu hỏi</div>
+                        </div>
+                    </a>
+                    <a href="" class="quiz-item">
+                        <div class="quiz-image-wrapper"></div>
+                        <div class="quiz-info-wrapper">
+                            <div class="quiz-title">A on Mars</div>
+                            <div class="quiz-num-questions">20 câu hỏi</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <nav class="main-navigation mt-5">
+            <div class="main-navigation-inner">
+
+            </div>
+        </nav>
+
+        <aside class="mt-2 aside">
+            <ad class="ad-container">
+                <div class="ad">
+                    <div class="ad-group-content">
+                        <img class="ad-image"
+                            src="https://res.cloudinary.com/uisumo-com/image/upload/c_scale,f_auto,h_382,q_auto,w_513/fc2saam30wlrjfuw9rak.png"
+                            aria-hidden="true">
+                    </div>
+                    <div class="remove-ads-btn-container">
+                        <button class="remove-ads-btn">
+                            <i class="fas fa-bolt"></i>
+                            Get Ebook
+                        </button>
+                    </div>
+                </div>
+            </ad>
+        </aside>
+    </div>
+    <footer></footer>
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+
+<script>
+    // Your first web app's Firebase configuration: Auth
+    var firebaseConfig = {
+        apiKey: "AIzaSyBl9UJGF3wXsZBghJqXvEalhZIMWZFsNXU",
+        authDomain: "quizapp-965ab.firebaseapp.com",
+        projectId: "quizapp-965ab",
+        storageBucket: "quizapp-965ab.appspot.com",
+        messagingSenderId: "911742713047",
+        appId: "1:911742713047:web:0ca805430894d72ece8492"
+    };
+
+    // Your second web app's Firebase configuration: Data
+    const secondFirebaseConfig = {
+        apiKey: "AIzaSyCp2hPBaQq5Z7aDmZSrB1TwY7pxQNiZSsk",
+        authDomain: "web-thi-thu.firebaseapp.com",
+        projectId: "web-thi-thu",
+        storageBucket: "web-thi-thu.appspot.com",
+        messagingSenderId: "1073206614083",
+        appId: "1:1073206614083:web:20cdc5d35e7d38fbf75cf6",
+        measurementId: "G-W2J21MKQ5C"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // Initialize Firebase
+    let secondaryApp = firebase.initializeApp(secondFirebaseConfig, "secondary");
+    let db = secondaryApp.firestore();
+</script>
+
+
+<!-- Thu vien sweet alert  -->
+
+
+<!-- Thu vien sweet alert  -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<script type="module" src="./components/sideBar.js"></script>
+<script type="module" src="./js/createTest.js"></script>
+<script type="module" src="./js/report.js"></script>
+<!-- <script src="./js/likeAndShare.js"></script> -->
+<script src="./js/loading.js"></script>
+
+<script type="module" src="./js/entercode.js"></script>
+<script type="module" src="./js/suggestion.js"></script>
+<script type="module" src="./js/user-info.js"></script>
+<script type="module" src="./js/search.js"></script>
+
+<!-- <script src="./js/loaduser.js"></script> -->
+
+</html>
