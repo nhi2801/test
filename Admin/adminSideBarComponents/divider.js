@@ -1,4 +1,4 @@
-class Divider {
+export class Divider {
     $container
     constructor() {
         this.$container = document.createElement('div');
@@ -9,4 +9,3 @@ class Divider {
         return this.$container;
     }
 }
-export default{Divider};

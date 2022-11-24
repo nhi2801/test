@@ -1,7 +1,7 @@
-import { Divider } from "./adminSideBarComponents/divider";
-import { Header } from "./adminSideBarComponents/header";
-import { NavigationList } from "./adminSideBarComponents/mainNavigationList";
-import { MenuWrapper } from "./adminSideBarComponents/menuWrapper";
+import { Divider } from "./adminSideBarComponents/divider.js";
+import { Header } from "./adminSideBarComponents/header.js";
+import { NavigationList } from "./adminSideBarComponents/mainNavigationList.js";
+import { MenuWrapper } from "./adminSideBarComponents/menuWrapper.js";
 
 const mainNavigation = document.querySelector('.main-navigation-inner');
 const header = new Header();
@@ -16,4 +16,4 @@ function renderSideBar() {
     mainNavigation.appendChild(navigationList.render());
 }
 
-export default {renderSideBar};
+export default renderSideBar;

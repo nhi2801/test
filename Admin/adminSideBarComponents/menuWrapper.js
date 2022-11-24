@@ -1,4 +1,4 @@
-class MenuWrapper {
+export class MenuWrapper {
     $container;
 
     $createBtn;
@@ -35,5 +35,3 @@ class MenuWrapper {
         return this.$container;
     }
 }
-
-export default {MenuWrapper};

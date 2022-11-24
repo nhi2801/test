@@ -1,4 +1,4 @@
-class NavigationList {
+export class NavigationList {
     $container;
     $mainNavigationList;
     $explore;
@@ -67,5 +67,3 @@ class NavigationList {
         return this.$container;
     }
 }
-
-export default{ NavigationList };

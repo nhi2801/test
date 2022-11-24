@@ -1,4 +1,4 @@
-class Header{
+export class Header{
     $container;
     $userInfo;
 
@@ -16,4 +16,3 @@ class Header{
         return this.$container;
     }
 }
-export default{Header}
