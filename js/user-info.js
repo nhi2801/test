@@ -1,4 +1,5 @@
 import { renderSideBar } from "../components/sideBar.js";
+import { checkLogin } from "./checkUserLogin.js";
 
 renderSideBar();
 const userInfo = document.querySelector(".user-info");
@@ -33,6 +34,25 @@ firebase.auth().onAuthStateChanged((user) => {
     btnLogin.addEventListener("click", () => {
       window.location.href = "./login.html";
     });
+
+    const sideBar = document.getElementById('explore').parentNode;
+    console.log(sideBar);
+    var children = sideBar.childNodes;
+    children.forEach(function (iterator) {
+      if (iterator.id === "my-quizzes" || iterator.id === "profile") {
+        iterator.style.display = "none";
+      }
+    });
+
+    const buttonCreate = document.getElementsByClassName('create-menu-wrapper')[0];
+    buttonCreate.hidden = true;
+
+    if (window.location.pathname === "/quizPage.html") {
+      console.log(window.location.pathname);
+      let tempInfo = localStorage.getItem('tempUserInfo');
+      console.log(tempInfo);
+      checkLogin();
+    }
   }
 
   function handleLogout() {

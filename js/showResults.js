@@ -5,7 +5,8 @@ function showResults() {
     showAnswersBtn.addEventListener('click', () => {
         const answerList = [];
         let id = window.location.search.split('=').pop();
-        quizData[id].forEach(element => {
+        console.log(quizData[id]);
+        quizData[id].questions.forEach(element => {
             answerList.push(element.rightAnswer);
         });
         if (document.getElementById('submit-score').hidden == false) {

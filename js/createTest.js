@@ -96,10 +96,10 @@ function renderQuiz(quizId, promise) {
                 cancelButtonText: 'Hủy'
             }).then((result) => {
                 if (result.isConfirmed) {
+                    checkLogin();
                     calculateScore();
                     showResults();
                     renderSuggestion();
-                    checkLogin();
                     checkLikedQuiz();
                     getInfoSavedQuiz();
                 }
@@ -151,8 +151,10 @@ function promiseGetFirebaseData() {
 
 
 if (APIArray.includes(id)) {
+    console.log('g');
     renderQuiz(id, promiseFetchAPI);
 } else {
+    console.log('g');
     renderQuiz(id, promiseGetFirebaseData);
 }
 

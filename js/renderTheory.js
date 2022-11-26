@@ -37,14 +37,34 @@ const data = {
     ]
 }
 
-function renderTheory(data){
+
+let id = window.location.search.split('=').pop();
+console.log(id);
+
+async function renderTheory(data){
+    const theories = await db.collection("theoryList").get().then((querySnapshot) => {
+        const list = [[], []];
+        querySnapshot.forEach((doc) => {
+            if (doc.id === id) {
+                list[0].push(doc.id)
+                list[1].push(doc.data());
+            }
+        })
+        console.log(list);
+        return list;
+    });
+
+    if (theories[0].length !== 0) {
+        data = theories[1][0];
+    }
+
     //render heading và desc
     theory.innerHTML = `<div class="ta-content">
                 <div class="img-tip">
                     <img src=${data.image}>
                 </div>
                 <h3 class="ta-content-heading"> 
-                    ${data.heading}
+                    ${data.theoryTitle.toUpperCase()}
                 </h3>
                 <div class="standfirst">
                     ${data.desc}
