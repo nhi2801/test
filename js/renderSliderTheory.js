@@ -46,10 +46,10 @@ async function name() {
 
     // Phan loai slider
     data.forEach((element) => {
-      if (element.category == "all") {
+      if (element.category == "hot") {
         basicArray.push(element);
       } 
-      if (element.category == "hot") {
+      if (element.category == "all") {
         otherArray.push(element);
       // if (data[element][0].infor.$category == "basic") {
       //   basicArray.push(element);
@@ -77,7 +77,7 @@ async function name() {
       //   data[`${Object.keys(data)[index]}`].questions.length + " câu hỏi";
 
       // Render link hinh anh
-      cardImage[index].src = data[index].image;
+      cardImage[index].src = data[index].imageURL;
       // cardImage[index].src = data[`${Object.keys(data)[index]}`][0].infor.$image;
 
       const listName = theories[0];

@@ -134,7 +134,7 @@ async function getQuizzes() {
 }
 
 let id = window.location.search.split('=').pop();
-let APIArray = ['quiz1', 'quiz2', 'quiz3', 'quiz4', 'quiz5', 'quiz6', 'quiz7', 'quiz8', 'quiz9', 'quiz_10', 'html', 'css', 'java', 'javascript', 'python', 'sql', 'javascriptnc', 'C', 'code', 'networkingbasic'];
+let APIArray = quizList[index[0]];
 function promiseFetchAPI() {
     // return fetch('https://apiquizizz.herokuapp.com/quizzes')
     //     .then(response => {
